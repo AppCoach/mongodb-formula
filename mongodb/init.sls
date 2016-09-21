@@ -89,6 +89,16 @@ mongodb_config:
     - group: root
     - mode: 644
 
+{% if salt["test.provider"]("service") == "systemd" %}
+mongodb_systemd:
+  file.managed:
+    - name: /lib/systemd/system/mongod.service
+    - source: salt://mongodb/files/mongod.service
+    - user: root
+    - group: root
+    - mode: 644
+{% endif %}
+
 mongodb_service:
   service.running:
     - name: {{ mdb.mongod }}
