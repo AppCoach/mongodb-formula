@@ -99,6 +99,18 @@ mongodb_systemd:
     - mode: 644
 {% endif %}
 
+# {%- if grains['os_family'] == 'Debian' %}
+# mongodb_thp:
+#   file.managed:
+#     - name: /etc/init.d/disable-transparent-hugepages
+#     - source: salt://mongodb/files/disable-transparent-hugepages
+#     - user: root
+#     - group: root
+#     - mode: 755
+#   service.enabled:
+#     - name: disable-transparent-hugepages
+# {% endif %}
+
 mongodb_service:
   service.running:
     - name: {{ mdb.mongod }}
