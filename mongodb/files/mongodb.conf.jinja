@@ -49,8 +49,8 @@ rest={{ mdb.settings.rest }}
 
     {%- endif %}
 
-{% for k, v in mdb.settings.set_parameter | default({}) | dictsort() %}
-setParameter = {{ k }}={{ v }}
-{%- endfor %}
+# {% for k, v in mdb.settings.set_parameter | default({}) | dictsort() %}
+# setParameter = {{ k }}={{ v }}
+# {%- endfor %}
 
 {%- endif %}
