@@ -48,7 +48,7 @@ mongodb_repo:
 
 mongodb_package:
   cmd.run:
-    - name: "apt-get install -y mongodb --allow-unauthenticated"
+    - name: "apt-get install -y mongodb-org --allow-unauthenticated"
   #pkg.installed:
   #  - skip_verify: True
   #  - name: {{ mdb.mongodb_package }}
